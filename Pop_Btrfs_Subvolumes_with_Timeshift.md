@@ -584,6 +584,7 @@ The following is taken from Willi Mutschler's website,
  
  * To be added:  timeshift-autosnap-apt to backup before every apt udate.
 
+
 resource: https://github.com/spxak1/weywot/blob/main/Pop_Btrfs_Subvolumes_with_Timeshift.md
 
 
