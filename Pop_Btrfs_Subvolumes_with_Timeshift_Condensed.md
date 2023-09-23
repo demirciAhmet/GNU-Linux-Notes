@@ -124,3 +124,5 @@ sudo btrfs filesystem defrag -v -r -f /home
 
 sudo btrfs balance start -m /
 ```
+
+resource: https://github.com/spxak1/weywot/blob/main/Pop_Btrfs_Subvolumes_with_Timeshift_Condensed.md
