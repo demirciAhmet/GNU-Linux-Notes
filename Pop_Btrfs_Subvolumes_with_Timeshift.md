@@ -1,6 +1,6 @@
 # Install Pop!_OS with **btrfs** and subvolumes
 
-**Important Note:** This guide may not fully correct since I have to edit some parts. I just forked it for later use for the template. Check https://www.youtube.com/watch?v=i8HDHAX1RJc for detailed guide to setup for version 22.04.
+**Important Note:** This guide may not fully correct since I have to edit some parts. I just forked it for later use for the template. Check https://www.youtube.com/watch?v=i8HDHAX1RJc for detailed guide to setup a btrfs sistem to Pop!_OS for version 22.04.
 
 This is a guide to install Pop!_OS (version 20.10 at the time of writing this) with **btrfs** instead of **ext4** to allow the use of **subvolumes** and **timeshift** for continuous backup. 
 
