@@ -1,5 +1,7 @@
 # Install Pop!_OS with **btrfs** and subvolumes (shortened)
 
+**Important Note:** This guide may not fully correct since I have to edit some parts. I just forked it for later use for the template. Check https://www.youtube.com/watch?v=i8HDHAX1RJc for detailed guide to setup a btrfs sistem to Pop!_OS for version 22.04.
+
 This guide targets users interested to get started quickly with Pop!\_OS over _Btrfs_ using an "Ubuntu layout", which means that the user will be able to leverage automatic snapshots from [_Timeshift_](https://github.com/linuxmint/timeshift) for excellent stability despite frequent updates.
 
 __Warnings__:
