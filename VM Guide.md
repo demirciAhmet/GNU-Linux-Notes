@@ -40,7 +40,7 @@ QEMU and KVM (Kernel-based Virtual Machine) are both open-source virtualization 
 
 2. **KVM (Kernel-based Virtual Machine)**:
 
-   - **Hypervisor:** KVM is a virtualization technology that turns the Linux kernel into a hypervisor. It leverages hardware virtualization extensions (such as Intel VT-x and AMD-V) to provide virtualization capabilities with minimal overhead.
+   - **Hypervisor:** KVM is a virtualization technology that turns the Linux kernel into a hypervisor. It leverages hardware virtualization extensions (such as Intel VT-x and AMD-V) to provide virtualization capabilities with minimal overhead. KVM is part of Linux. If you’ve got Linux 2.6.20 or newer, you’ve got KVM.
 
    - **Performance:** KVM generally provides better performance compared to QEMU because it allows for near-native execution of guest code. It does this by running the guest operating system and applications directly on the host CPU whenever possible, only using QEMU for I/O and certain privileged instructions.
 
