@@ -10,6 +10,7 @@ To make an alias (like a shortcut for terminal)
 alias keyword="command"
 ```
 3-Save the file and exit.
+
 4-Open the terminal and write:
 ```
 $ source ~/.bashrc
