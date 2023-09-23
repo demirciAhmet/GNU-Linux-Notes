@@ -1,5 +1,7 @@
 # Install Pop!_OS with **btrfs** and subvolumes
 
+**Important Note:** This guide may not fully correct since I have to edit some parts. I just forked it for later use for the template. Check https://www.youtube.com/watch?v=i8HDHAX1RJc for detailed guide to setup for version 22.04.
+
 This is a guide to install Pop!_OS (version 20.10 at the time of writing this) with **btrfs** instead of **ext4** to allow the use of **subvolumes** and **timeshift** for continuous backup. 
 
 ## 1. Introduction
@@ -249,7 +251,7 @@ You're using the terminal, still in root interactive mode (```sudo -i```).
 
 First mount the **ROOT** partition to ```/mnt```
 
-```mount -o subvolid=5,ssd,noatime,space_cache,commit=120,compress=zstd /dev/sdc3 /mnt```
+```mount -o subvolid=5,ssd,noatime,space_cache=v2,commit=120,compress=zstd:1 /dev/nvme1n1p3 /mnt```
 
 These options are suggested for better performance with **btrfs** (taken from Willi Mutschler site as they appear):
 
