@@ -27,6 +27,10 @@ Run the script with root privileges:
 ```
 sudo ./jammy-change-gdm-background /path/to/my/image
 ```
+For example, switch to one of the pop backgrounds:
+```
+sudo ./jammy-change-gdm-background /usr/share/backgrounds/pop/galen-crout-175291.jpg
+```
 
 If you see a message `login image sucessfully changed`, then, when you restart gdm or reboot your
 computer, your gdm background should be covered with the image you selected.
