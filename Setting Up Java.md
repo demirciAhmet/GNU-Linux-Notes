@@ -10,4 +10,4 @@ sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-21-orac
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
 ```
-(Optional) If you are not encountering any issues with your current setup, there may be no need to add JAVA_HOME to the /etc/environment file. You can continue to use Java as you have been without any problems. However, if you plan to use specific Java development tools or applications that require the JAVA_HOME variable to be set, you can add it with `sudo nano /etc/environment` and then add the line to the end: `JAVA_HOME="/usr/lib/jvm/jdk-21-oracle-x64"` and `source /usr/environment`. 
+(Optional) If you are not encountering any issues with your current setup, there may be no need to add JAVA_HOME to the /etc/environment file. You can continue to use Java as you have been without any problems. However, if you plan to use specific Java development tools or applications that require the JAVA_HOME variable to be set, you can add it with `sudo nano /etc/environment` and then add the line to the end: `JAVA_HOME="/usr/lib/jvm/jdk-21-oracle-x64"` and `source /etc/environment`. 
