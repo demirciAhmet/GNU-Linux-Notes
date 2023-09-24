@@ -1,7 +1,5 @@
 
-1) Just install the latest jdk from oracle (for debian based distros install .deb): https://www.oracle.com/java/technologies/downloads/s
-
-then install it with installer or: `sudo dpkg -i jdk-20_linux-x64_bin.deb`
+1) Just install the latest jdk from oracle (for debian based distros install .deb): https://www.oracle.com/java/technologies/downloads/ then install it with installer or: `sudo dpkg -i jdk-20_linux-x64_bin.deb`
 
 
 2) To change the jdk to newer version (e.g. jdk21), change the alternatives: 
