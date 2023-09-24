@@ -7,9 +7,5 @@
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-21/bin/java 1
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-21/bin/javac 1
 ```
-3) (Optional) add the path to the environments:
-
-```
-nano /etc/environment
-JAVA_HOME='/usr/lib/jvm/jdk-21'
-```
+3) (Optional) add the path to the environments: `nano /etc/environment`
+4) Add the line to the end: `JAVA_HOME='/usr/lib/jvm/jdk-21`
