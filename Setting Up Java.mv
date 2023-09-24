@@ -1,5 +1,5 @@
 
-1) Just install the latest jdk from oracle (for ubuntu based distros install .deb): [Oracle JDK Downloads](https://www.oracle.com/java/technologies/downloads/)
+1) Just install the latest jdk from oracle (for debian based distros install .deb): [Oracle JDK Downloads](https://www.oracle.com/java/technologies/downloads/)
 
 then install it with installer or: `sudo dpkg -i jdk-20_linux-x64_bin.deb`
 
