@@ -10,4 +10,4 @@ Shows btrfs system: `sudo btrfs filesystem show /`
 
 Shows btrfs subvols: `sudo btrfs subvolume list /`
 
-Remove or add a timeout for systemd boot loader: `sudo -i` `nano /boot/efi/loader/loader.conf` `timeout 3`
+Remove or add a timeout for systemd boot loader: `sudo -i` `nano /boot/efi/loader/loader.conf` add to the end: `timeout 3`
