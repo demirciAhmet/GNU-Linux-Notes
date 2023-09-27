@@ -12,6 +12,6 @@ Shows btrfs subvols: `sudo btrfs subvolume list /`
 
 Remove or add a timeout for systemd boot loader: `sudo -i` `nano /boot/efi/loader/loader.conf` add to the end: `timeout 3`
 
-Show hidden files in the file manager: `Ctrl + H`
+Show hidden files in the file manager (Nautilus): `Ctrl + H`
 
-Type to the search bar of the file manager: `Ctrl + L`
+Type to the search bar of the file manager (Nautilus): `Ctrl + L`
