@@ -30,10 +30,17 @@ Manipulate images from right click menu:
 
 *** 
 
-##### Some DPKG Packages About Nautilus and Gnome
+##### DPKG Packages about Gnome and Nautilus
 
 nautilus-kdeconnect:                  KDE Connect integration for Nautilus
 nautilus-nextcloud:                   Nextcloud integration for Nautilus
 gnome-shell-extension-gsconnect:      KDE Connect implementation for GNOME Shell
+gnome-sushi:                          sushi is a quick previewer for nautilus
+
+***
+
+##### OBS Settings
+
+**Sources:** XSHM for XORG, PipeWire for Wayland.
 
 
