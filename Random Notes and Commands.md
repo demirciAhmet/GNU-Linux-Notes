@@ -2,6 +2,8 @@
 
 **This file contains random commands and notes for any purpose.**
 
+***
+
 ##### Partition Management, BTRFS
 
 List what you have mounted: `sudo mount -av`
@@ -13,6 +15,8 @@ Shows btrfs system: `sudo btrfs filesystem show /`
 Shows btrfs subvols: `sudo btrfs subvolume list /`
 
 Remove or add a timeout for systemd boot loader: `sudo -i` `nano /boot/efi/loader/loader.conf` add to the end: `timeout 3`
+
+***
 
 ##### File Manager, Nautilus
 
