@@ -28,7 +28,9 @@ New file from right click menu: Anything you put in `/home/username/Templates/` 
 
 Manipulate images from right click menu: 
 
-##### Some APT Packages About Nautilus
+*** 
+
+##### Some APT Packages About Nautilus and Gnome
 
 nautilus-kdeconnect:                  KDE Connect integration for Nautilus
 nautilus-nextcloud:                   Nextcloud integration for Nautilus
