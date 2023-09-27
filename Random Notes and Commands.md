@@ -24,4 +24,14 @@ Show hidden files in the file manager: `Ctrl + H`
 
 Type to the search bar of the file manager: `Ctrl + L`
 
-Anything you put in `/home/username/Templates/` can be easily generated. You can easily generate from the template you put there.
+New file from right click menu: Anything you put in `/home/username/Templates/` can be easily generated. You can easily generate from the template you put there.
+
+Manipulate images from right click menu: 
+
+##### Some APT Packages About Nautilus
+
+nautilus-kdeconnect:                  KDE Connect integration for Nautilus
+nautilus-nextcloud:                   Nextcloud integration for Nautilus
+gnome-shell-extension-gsconnect:      KDE Connect implementation for GNOME Shell
+
+
