@@ -12,6 +12,10 @@ Shows btrfs subvols: `sudo btrfs subvolume list /`
 
 Remove or add a timeout for systemd boot loader: `sudo -i` `nano /boot/efi/loader/loader.conf` add to the end: `timeout 3`
 
+***
+
 Show hidden files in the file manager (Nautilus): `Ctrl + H`
 
 Type to the search bar of the file manager (Nautilus): `Ctrl + L`
+
+Anything you put in `/home/username/Templates/` can be easily generated. You can easily generate from the template you put there.
