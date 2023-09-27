@@ -32,12 +32,12 @@ Manipulate images from right click menu:
 
 ##### DPKG Packages about Gnome and Nautilus
 
-| Syntax      | Description |
+| Package      | Description |
 | ----------- | ----------- |
-| Header      | Title       |
+| nautilus-kdeconnect:      | Title       |
 | Paragraph   | Text        |
 
-nautilus-kdeconnect:                  KDE Connect integration for Nautilus
+                  KDE Connect integration for Nautilus
 nautilus-nextcloud:                   Nextcloud integration for Nautilus
 gnome-shell-extension-gsconnect:      KDE Connect implementation for GNOME Shell
 gnome-sushi:                          sushi is a quick previewer for nautilus
