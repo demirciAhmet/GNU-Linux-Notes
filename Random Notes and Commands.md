@@ -24,7 +24,7 @@ Show hidden files in the file manager: `Ctrl + H`
 
 Type to the search bar of the file manager: `Ctrl + L`
 
-New file from right click context menu: Put a template to `/home/username/Templates/`. You can easily generate a file from right click context menu from the template you put there.
+New file from right click context menu: Put a template to `/home/username/Templates/`. You can easily generate a file from right click context menu from the template you put here.
 
 Manipulate images from right click menu: 
 
