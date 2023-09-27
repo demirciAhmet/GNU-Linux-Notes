@@ -30,7 +30,7 @@ Manipulate images from right click menu:
 
 *** 
 
-##### Some DPGK Packages About Nautilus and Gnome
+##### Some DPKG Packages About Nautilus and Gnome
 
 nautilus-kdeconnect:                  KDE Connect integration for Nautilus
 nautilus-nextcloud:                   Nextcloud integration for Nautilus
