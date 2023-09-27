@@ -1,6 +1,6 @@
 ## Some random commands
 
-This file contains random commands for any purpose.
+This file contains random commands and notes for any purpose.
 
 List what you have mounted: `sudo mount -av`
 
