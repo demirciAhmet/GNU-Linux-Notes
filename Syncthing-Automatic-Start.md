@@ -1,5 +1,5 @@
 https://www.reddit.com/r/SteamDeck/comments/vocyi5/start_syncthing_automatically_on_steamdeck_even/
-,,,
+```
 [Unit]
 Description=Syncthing
 
@@ -9,7 +9,7 @@ ExecStart=flatpak run --command=syncthing me.kozec.syncthingtk
 Restart=on-failure
 RestartSec=1
 SuccessExitStatus=3 4
-,,,
+```
 
 [Install]
 WantedBy=default.target
