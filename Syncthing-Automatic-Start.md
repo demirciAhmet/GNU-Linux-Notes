@@ -16,8 +16,7 @@ SuccessExitStatus=3 4
 [Install]
 WantedBy=default.target
 ```
-Then open the console and type:
-
+Enable the service to start automatically on boot and then start it:
 ```
 systemctl --user enable syncthing
 
