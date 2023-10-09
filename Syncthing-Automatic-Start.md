@@ -1,6 +1,6 @@
 https://www.reddit.com/r/SteamDeck/comments/vocyi5/start_syncthing_automatically_on_steamdeck_even/
 
-Next you will need a new text file located at /etc/systemd/user/syncthing-autosync.service and the contents of the file will be 
+Next you will need a new text file located at /etc/systemd/user/syncthing-autosync.service with `nano /etc/systemd/user/syncthing-autosync.service` and the contents of the file will be:
 
 ```
 [Unit]
