@@ -18,9 +18,9 @@ WantedBy=default.target
 ```
 Enable the service to start automatically on boot and then start it:
 ```
-systemctl --user enable syncthing
+systemctl --user enable syncthing-autosync
 
-systemctl --user start syncthing
+systemctl --user start syncthing-autosync
 ```
 
 Now you should be able to open Syncthing GTK and it will no longer display the popup that it is starting a daemon because it is just connecting to the one already running. 
