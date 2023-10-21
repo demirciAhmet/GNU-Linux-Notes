@@ -1,12 +1,12 @@
 # Install Pop!_OS with **btrfs** and subvolumes
 
-**Important Note:** This guide may not fully correct since I have to edit some parts. I just forked it for later use for the template. Check https://www.youtube.com/watch?v=i8HDHAX1RJc for detailed guide to setup a btrfs sistem to Pop!_OS for version 22.04.
+**WARNING!:** This guide may not fully correct since I just forked it for later use for a template. Check [mutschler's youtube video](https://www.youtube.com/watch?v=i8HDHAX1RJc) for detailed guide to setup a btrfs sistem to Pop!_OS for version 22.04. For even more up to date guide, please check [mutschler's guide](https://mutschler.dev/linux/pop-os-btrfs-22-04/)
 
 This is a guide to install Pop!_OS (version 22.04 at the time of writing this) with **btrfs** instead of **ext4** to allow the use of **subvolumes** and **timeshift** for continuous backup. 
 
 ## 1. Introduction
 
-This guide has been adapted from **Willi Mutschler**'s excellent guide found [here](https://mutschler.eu/linux/install-guides/pop-os-btrfs/) that **also includes Luks encryption** using **LVM**. My version **does not** use encryption, so if you need encryption, please follow his guide. All credit for this work belongs to [**Willi Mutschler**](https://mutschler.eu/).
+This guide has been adapted from **Willi Mutschler**'s excellent guide found [here](https://mutschler.dev/linux/pop-os-btrfs-22-04/) that **also includes Luks encryption** using **LVM**. My version **does not** use encryption, so if you need encryption, please follow his guide. All credit for this work belongs to [**Willi Mutschler**](https://mutschler.eu/).
 
 ### 1.1 Purpose
 
@@ -44,7 +44,7 @@ The installation is done in **three parts**. Preparing the system, installing th
 Open a terminal (Super+T) and change to interactive root with ```sudo -i```. Keep this terminal **open at all times**.
 To install *Pop!_OS* we will need **three partitions** (including the **recovery**).
 
-1. A 512MB Fat32 partition for ```/boot/efi```
+1. A 1024MB Fat32 partition for ```/boot/efi```
 2. A 4096MB Fat32 partition for ```/recovery```
 3. A linux partition (no filesystem yet) for ```/```
 
