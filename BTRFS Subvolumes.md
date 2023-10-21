@@ -24,7 +24,7 @@ This quide requires the ability to perform tasks using the terminal. It also exp
 and ability to:
 
 1. Boot a PC from USB
-2. Create and edit partitions using various tools (parted, gparted or fdisk)
+2. Partition handling with various tools (parted, gparted or fdisk)
 3. Install Pop!_OS in advance mode
 4. Edit files using **nano** or other editors (**vim** or graphically **gedit**)
 
