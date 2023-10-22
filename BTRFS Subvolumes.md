@@ -272,11 +272,10 @@ Create subvolume '/mnt/@'
 root@pluto:/# btrfs subvolume create /mnt/@
 </pre>
 
-With the `@` subvolume created, we need to move all the data except for `/home` from the old `/` to the new `/`, under the `@` subvolume. __NB__ : We are not moving `/home` right now as we will copy it later into the proper subvolume.
+With the `@` subvolume created, we need to move all the data except for `/home` from the old `/` to the new `/`, under the `@` subvolume. To do this, we will firtly move all of the data to the ```/mnt/@/```
 
 <pre>
-root@pluto:/# cd /mnt
-root@pluto:/# ls | grep -v '@\|home' | xargs mv -t @
+root@pluto:/# mv /mnt/* /mnt/@/
 </pre>
 
 The second command moved all files and folders, except the home directory, to `/mnt/@`.
