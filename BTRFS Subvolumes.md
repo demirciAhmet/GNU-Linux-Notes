@@ -282,21 +282,12 @@ The second command moved all files and folders, except the home directory, to `/
 
 If we check now in `/mnt`, there is nothing but the subvolume **@**. If you check inside of it you will find all installation data.
 
-<pre>
-root@pluto:/# ls /mnt/
- @
-root@pluto:/# cd @
-root@pluto:/# ls
- bin   dev  home  lib32  libx32  mnt  proc      root  sbin  swap  tmp  var
- boot  etc  lib   lib64  media   opt  recovery  run   srv   sys   usr
-</pre>
-
 Now for the other two subvolumes.
 
 Create subvolume '/mnt/@home'
 <pre>
 root@pluto:/# btrfs subvolume create /mnt/@home
-root@pluto:/# mv ./home/ ./@home 
+root@pluto:/# mv /mnt/@/home/* /mnt/@home/ 
 </pre>
 The second command ensured that all data from `/home` were written into `./@home`.
 
@@ -307,6 +298,13 @@ root@pluto:/# btrfs subvolume list /mnt
  ID 263 gen 66 top level 5 path @
  ID 264 gen 64 top level 5 path @home
  ID 265 gen 66 top level 5 path @swap
+</pre>
+
+You can control the subvolumes with:
+<pre>
+root@pluto:/# ls -a /mnt/@/
+root@pluto:/# ls -a /mnt/@home/
+root@pluto:/# btrfs subvolume list /mnt
 </pre>
 
 Your ID numbers may differ.
@@ -328,7 +326,7 @@ root@pluto:/# chmod 600 /mnt/@swap/swapfile
 root@pluto:/# mkswap /mnt/@swap/swapfile
  Setting up swapspace version 1, size = 9 GiB (9663676416 bytes) 
  no label, UUID=a0fee436-e38a-4d60-bb40-680c221db376
-mkdir /mnt/@/swap
+root@pluto:/# mkdir /mnt/@/swap
 </pre>
 
 The last command has created a `swap` folder inside the `/` root. We will mount the `@swap` subvolume to that folder to make it a appear as a swap partition to the filesystem.
@@ -363,12 +361,12 @@ Now have your `/mnt/@/etc/fstab` look like this:
 # that works even if disks are added and removed. See fstab(5).
 #
 # <file system>  <mount point>  <type>  <options>  <dump>  <pass>
-PARTUUID=697685f3-e003-4cd4-a7be-b07bbcf4497e   /boot/efi       vfat    umask=0077      0  0
-PARTUUID=a9fbe686-9f08-487c-9bc9-db094845b8c2   /recovery       vfat    umask=0077      0  0
-UUID=78c9787f-1d36-42e8-89bd-7b94b501afaf       /               btrfs   defaults,subvol=@,ssd,noatime,space_cache,commit=120,compress=zstd      0  0
-UUID=78c9787f-1d36-42e8-89bd-7b94b501afaf       /home           btrfs   defaults,subvol=@home,ssd,noatime,space_cache,commit=120,compress=zstd  0  0
-UUID=78c9787f-1d36-42e8-89bd-7b94b501afaf       /swap           btrfs   defaults,subvol=@swap,compress=no 0 0
-/swap/swapfile                                  none            swap    defaults        0  0
+PARTUUID=697685f3-e003-4cd4-a7be-b07bbcf4497e   /boot/efi    vfat    umask=0077      0  0
+PARTUUID=a9fbe686-9f08-487c-9bc9-db094845b8c2   /recovery    vfat    umask=0077      0  0
+UUID=78c9787f-1d36-42e8-89bd-7b94b501afaf       /            btrfs   defaults,subvol=@,ssd,noatime,space_cache=v2,commit=120,compress=zstd,discard=async      0  0
+UUID=78c9787f-1d36-42e8-89bd-7b94b501afaf       /home        btrfs   defaults,subvol=@home,ssd,noatime,space_cache=v2,commit=120,compress=zstd,discard=async  0  0
+UUID=78c9787f-1d36-42e8-89bd-7b94b501afaf       /swap        btrfs   defaults,subvol=@swap,compress=no 0 0
+/swap/swapfile                                  none         swap    defaults        0  0
 </pre>
 
 Note that the **UUID** is the same for all system mounts except for the ```/boot/efi``` and the ```/recovery``` that use their **PARTUUID**, and you **do not change these**.
@@ -455,7 +453,7 @@ So the complete file will look like this:
  
  Now we will remount the new system (in its subvolumes) to ```/mnt``` again.
  
-```mount -o defaults,subvol=@,ssd,noatime,space_cache,commit=120,compress=zstd /dev/sdc3 /mnt```
+```mount -o defaults,subvol=@,ssd,noatime,space_cache=v2,commit=120,compress=zstd /dev/nvme0n1p3 /mnt```
 
 Note the above mounts the ```subvol=@```, that is the root, to ```/mnt```. It's a different command to the one we used earlier.
 
@@ -463,7 +461,7 @@ Now mount the required system partitions:
 
 ~~~
 for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
-sudo cp /etc/resolv.conf /mnt/etc/
+sudo cp /etc/resolv.conf  /mnt/etc/
 sudo chroot /mnt
 ~~~
 
