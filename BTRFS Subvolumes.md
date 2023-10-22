@@ -251,7 +251,7 @@ You're using the terminal, still in root interactive mode (```sudo -i```).
 
 First mount the **ROOT** partition to ```/mnt```
 
-```mount -o subvolid=5,ssd,noatime,space_cache=v2,commit=120,compress=zstd:1 /dev/nvme1n1p3 /mnt```
+```mount -o subvolid=5,ssd,noatime,space_cache=v2,commit=120,compress=zstd:1,discard=async /dev/nvme1n1px /mnt``` `(x = your root partition)`
 
 These options are suggested for better performance with **btrfs** (taken from Willi Mutschler site as they appear):
 
