@@ -1,19 +1,23 @@
 # Install Pop!_OS with **btrfs** and subvolumes (shortened)
 
-**Important Note:** This guide may not fully correct since I have to edit some parts. I just forked it for later use for the template. Check https://www.youtube.com/watch?v=i8HDHAX1RJc for detailed guide to setup a btrfs sistem to Pop!_OS for version 22.04.
+**WARNING!:** This guide may not fully correct since I just forked it for later use for a template. Check [mutschler's youtube video](https://www.youtube.com/watch?v=i8HDHAX1RJc) for detailed guide to setup a btrfs sistem to Pop!_OS for version 22.04. For even more up to date guide, please check [mutschler's guide](https://mutschler.dev/linux/pop-os-btrfs-22-04/)
 
-This guide targets users interested to get started quickly with Pop!\_OS over _Btrfs_ using an "Ubuntu layout", which means that the user will be able to leverage automatic snapshots from [_Timeshift_](https://github.com/linuxmint/timeshift) for excellent stability despite frequent updates.
-
+This is a guide to install Pop!_OS (version 22.04 at the time of writing this) with **btrfs** instead of **ext4** to allow the use of **subvolumes** and **timeshift** for continuous backup. 
 __Warnings__:
 - the guide assumes that the user is not using full-disk encryption
 - it features (optional) zstd compression and other SSD optimizations, fitting best laptop users.
 
 ## Required partition layout
 - the bootloader partition:
- - size: 512MBs
+ - size: 1024MB
  - format: fat32
  - mount point: `/boot/efi`
  - suggested label: POP_boot
+- the recovery partition:
+ - size:4096MB
+ - format: fat32
+ - mount point: `/recovery`
+ - suggested label: POP_Recovery
 - the root partition:
   - size: +25 Gbs
   - format: btrfs
