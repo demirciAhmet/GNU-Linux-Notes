@@ -251,15 +251,15 @@ You're using the terminal, still in root interactive mode (```sudo -i```).
 
 First mount the **ROOT** partition to ```/mnt```
 
-```mount -o subvolid=5,ssd,noatime,space_cache=v2,commit=120,compress=zstd:1,discard=async /dev/nvme1n1px /mnt``` `(x = your root partition)`
+```mount -o defaults,subvol=@,compress=zstd:1,discard=async,noatime,commit=120 <path to root partition> /mnt```
 
 These options are suggested for better performance with **btrfs** (taken from Willi Mutschler site as they appear):
 
-1. **ssd**: use SSD specific options for optimal use on SSD and NVME
+1. **ssd**: use SSD specific options for optimal use on SSD and NVME. By default, pop os 22.04 recognizes your ssd.
 2. **noatime**: prevent frequent disk writes by instructing the Linux kernel not to store the last access time of files and folders
 3. **space_cache**: allows btrfs to store free space cache on the disk to make caching of a block group much quicker
-4. **commit=120**: time interval in which data is written to the filesystem (value of 120 is taken from Manjaro’s minimal iso)
-5. **compress=zstd**: allows to specify the compression algorithm which we want to use. btrfs provides lzo, zstd and zlib compression algorithms. Based on some Phoronix test cases, zstd seems to be the better performing candidate.
+4. **commit=120**: time interval in which data is written to the filesystem (value of 120 is taken from Manjaro’s minimal iso) (default=30 in fedora)
+5. **compress=zstd:1**: allows to specify the compression algorithm which we want to use. btrfs provides lzo, zstd and zlib compression algorithms. Based on some Phoronix test cases, zstd seems to be the better performing candidate. zstd:1 is more lightweight while it compress lesser against zstd:9.
 
 Now you have your newly installed system mounted on `/mnt`. We are going to make 3 subvolumes:
 
