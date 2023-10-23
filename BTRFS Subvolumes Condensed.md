@@ -47,17 +47,17 @@ Replace the contents between `< >` as fits (see previous section). Each new line
 
 ```
 mount <path to root partition> /mnt
-
+# for example: mount /dev/sda3 /mnt
 cd /mnt
 
-sudo btrfs subvolume create @
+btrfs subvolume create @
 
 ls | grep -v @ | xargs mv -t @
 
 ls -a /mnt
 # . .. @
 
-sudo btrfs subvolume create @home
+btrfs subvolume create @home
 
 mv /mnt/@/home/* /mnt/@home/
 
@@ -87,6 +87,7 @@ Each new line is a separate command to run.
 
 ```
 mount -o defaults,subvol=@,compress=zstd:1,discard=async,noatime,commit=120 <path to root partition> /mnt
+# mount -o defaults,subvol=@,compress=zstd:1,discard=async,noatime,commit=120 /dev/sda3 /mnt
 
 for i in /dev/dev/pts/proc/sys/run; do sudo mount -B $i /mnt$i; done
 
@@ -102,6 +103,8 @@ In case you are reinstalling over a previous Btrfs partition, the first command 
 
 ```
 mount -o sudo mount -o defaults,subvol=@,compress=zstd:1,discard=async,noatime,commit=120,clear_cache <path to root partition> /mnt
+# mount -o sudo mount -o defaults,subvol=@,compress=zstd:1,discard=async,noatime,commit=120,clear_cache /dev/sda3 /mnt
+
 ```
 
 At this point the terminal might warn about `/etc/resolv.conf` being a duplicate of the target; you can safely ignore the warning.
